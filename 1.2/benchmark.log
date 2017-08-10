@@ -1,0 +1,6 @@
+# os/user
+/usr/bin/ld: -r and -pie may not be used together
+collect2: error: ld returned 1 exit status
+# net
+/usr/bin/ld: -r and -pie may not be used together
+collect2: error: ld returned 1 exit status

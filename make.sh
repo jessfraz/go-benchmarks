@@ -9,10 +9,10 @@ run(){
 	suite=$1
 
 	echo "Running ${REPO_URL}/${base}:${suite} benchmark"
-	docker run --rm -i ${REPO_URL}/${base}:${suite} || return 1
+	docker run --rm -i ${REPO_URL}/${base}:${suite}  &> "${suite}/benchmark.log" || return 1
 
 	echo "                       ---                                   "
-	echo "Successfully ran ${base}:${suite}"
+	echo "Successfully ran ${base}:${suite} log lives in ${suite}/benchmark.log"
 	echo "                       ---                                   "
 }
 
