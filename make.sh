@@ -11,6 +11,9 @@ run(){
 	echo "Running ${REPO_URL}/${base}:${suite} benchmark"
 	docker run --rm -i ${REPO_URL}/${base}:${suite}  &> "${suite}/benchmark.log" || return 1
 
+	# clean the logs
+	cat "${suite}/benchmark.log" | grep "^Benchmark" | sed s/-12//g > "${suite}/clean.log"
+
 	echo "                       ---                                   "
 	echo "Successfully ran ${base}:${suite} log lives in ${suite}/benchmark.log"
 	echo "                       ---                                   "
