@@ -1,0 +1,97 @@
+# net
+/usr/bin/ld: -r and -pie may not be used together
+collect2: error: ld returned 1 exit status
+# os/user
+/usr/bin/ld: -r and -pie may not be used together
+collect2: error: ld returned 1 exit status
+FAIL	archive/tar [build failed]
+PASS
+BenchmarkCompressedZipGarbage-12	     100	  22328552 ns/op	   40811 B/op	     116 allocs/op
+BenchmarkZip64Test-12           	      20	  87954992 ns/op
+ok  	archive/zip	11.018s
+PASS
+BenchmarkReaderCopyOptimal-12   	10000000	       237 ns/op
+BenchmarkReaderCopyUnoptimal-12 	 5000000	       394 ns/op
+BenchmarkReaderCopyNoWriteTo-12 	  200000	      7213 ns/op
+BenchmarkReaderWriteToOptimal-12	 3000000	       461 ns/op
+BenchmarkWriterCopyOptimal-12   	 5000000	       215 ns/op
+BenchmarkWriterCopyUnoptimal-12 	 5000000	       383 ns/op
+BenchmarkWriterCopyNoReadFrom-12	  200000	      7528 ns/op
+BenchmarkReaderEmpty-12         	 1000000	      1292 ns/op	    4224 B/op	       3 allocs/op
+BenchmarkWriterEmpty-12         	 2000000	       917 ns/op	    4096 B/op	       1 allocs/op
+BenchmarkWriterFlush-12         	100000000	        17.5 ns/op	       0 B/op	       0 allocs/op
+ok  	bufio	20.039s
+?   	builtin	[no test files]
+PASS
+BenchmarkReadString-12                 	  100000	     14201 ns/op	2307.31 MB/s
+BenchmarkBufferNotEmptyWriteRead-12    	    3000	    416688 ns/op
+BenchmarkBufferFullSmallReads-12       	   10000	    153684 ns/op
+BenchmarkIndexByte32-12                	200000000	         6.80 ns/op	4704.87 MB/s
+BenchmarkIndexByte4K-12                	10000000	       167 ns/op	24497.11 MB/s
+BenchmarkIndexByte4M-12                	   10000	    169151 ns/op	24796.07 MB/s
+BenchmarkIndexByte64M-12               	     300	   4826201 ns/op	13905.11 MB/s
+BenchmarkIndexBytePortable32-12        	50000000	        30.1 ns/op	1063.81 MB/s
+BenchmarkIndexBytePortable4K-12        	 1000000	      2181 ns/op	1877.22 MB/s
+BenchmarkIndexBytePortable4M-12        	    1000	   2226503 ns/op	1883.81 MB/s
+BenchmarkIndexBytePortable64M-12       	      50	  35688049 ns/op	1880.43 MB/s
+BenchmarkEqual0-12                     	300000000	         3.52 ns/op
+BenchmarkEqual1-12                     	300000000	         3.75 ns/op	 266.83 MB/s
+BenchmarkEqual6-12                     	500000000	         3.63 ns/op	1652.05 MB/s
+BenchmarkEqual9-12                     	300000000	         4.47 ns/op	2013.95 MB/s
+BenchmarkEqual15-12                    	300000000	         4.58 ns/op	3277.87 MB/s
+BenchmarkEqual16-12                    	300000000	         4.49 ns/op	3561.92 MB/s
+BenchmarkEqual20-12                    	200000000	         5.10 ns/op	3925.38 MB/s
+BenchmarkEqual32-12                    	300000000	         5.47 ns/op	5847.33 MB/s
+BenchmarkEqual4K-12                    	10000000	       106 ns/op	38333.08 MB/s
+BenchmarkEqual4M-12                    	    5000	    210411 ns/op	19933.80 MB/s
+BenchmarkEqual64M-12                   	     200	   8975360 ns/op	7477.01 MB/s
+BenchmarkEqualPort1-12                 	300000000	         4.09 ns/op	 244.37 MB/s
+BenchmarkEqualPort6-12                 	200000000	         8.29 ns/op	 723.93 MB/s
+BenchmarkEqualPort32-12                	50000000	        31.8 ns/op	1005.92 MB/s
+BenchmarkEqualPort4K-12                	 1000000	      2209 ns/op	1853.95 MB/s
+BenchmarkEqualPortable4M-12            	    1000	   2225352 ns/op	1884.78 MB/s
+BenchmarkEqualPortable64M-12           	      50	  36889644 ns/op	1819.18 MB/s
+BenchmarkIndex32-12                    	10000000	       154 ns/op	 207.18 MB/s
+BenchmarkIndex4K-12                    	   50000	     24694 ns/op	 165.87 MB/s
+BenchmarkIndex4M-12                    	      50	  24678540 ns/op	 169.96 MB/s
+BenchmarkIndex64M-12                   	       3	 421491391 ns/op	 159.22 MB/s
+BenchmarkIndexEasy32-12                	50000000	        34.1 ns/op	 937.59 MB/s
+BenchmarkIndexEasy4K-12                	10000000	       179 ns/op	22858.81 MB/s
+BenchmarkIndexEasy4M-12                	   10000	    166261 ns/op	25227.10 MB/s
+BenchmarkIndexEasy64M-12               	     300	   4870261 ns/op	13779.31 MB/s
+BenchmarkCount32-12                    	10000000	       177 ns/op	 180.01 MB/s
+BenchmarkCount4K-12                    	  100000	     26203 ns/op	 156.31 MB/s
+BenchmarkCount4M-12                    	     100	  22334946 ns/op	 187.79 MB/s
+BenchmarkCount64M-12                   	       3	 360979909 ns/op	 185.91 MB/s
+BenchmarkCountEasy32-12                	50000000	        34.5 ns/op	 926.77 MB/s
+BenchmarkCountEasy4K-12                	 5000000	       208 ns/op	19612.14 MB/s
+BenchmarkCountEasy4M-12                	   10000	    169003 ns/op	24817.87 MB/s
+BenchmarkCountEasy64M-12               	     300	   4888950 ns/op	13726.64 MB/s
+BenchmarkFields-12                     	      50	  22559002 ns/op	  46.48 MB/s
+BenchmarkFieldsFunc-12                 	     100	  22209279 ns/op	  47.21 MB/s
+BenchmarkTrimSpace-12                  	30000000	        41.5 ns/op
+BenchmarkRepeat-12                     	20000000	       131 ns/op
+BenchmarkCompareBytesEqual-12          	300000000	         4.63 ns/op
+BenchmarkCompareBytesToNil-12          	300000000	         4.15 ns/op
+BenchmarkCompareBytesEmpty-12          	500000000	         3.68 ns/op
+BenchmarkCompareBytesIdentical-12      	500000000	         3.85 ns/op
+BenchmarkCompareBytesSameLength-12     	300000000	         4.81 ns/op
+BenchmarkCompareBytesDifferentLength-12	300000000	         4.84 ns/op
+BenchmarkCompareBytesBigUnaligned-12   	   20000	     66944 ns/op	15663.41 MB/s
+BenchmarkCompareBytesBig-12            	   20000	     57793 ns/op	18143.73 MB/s
+BenchmarkCompareBytesBigIdentical-12   	300000000	         3.61 ns/op	290605424.30 MB/s
+ok  	bytes	112.048s
+PASS
+ok  	cmd/addr2line	1.148s
+?   	cmd/asm	[no test files]
+?   	cmd/asm/internal/arch	[no test files]
+PASS
+ok  	cmd/asm/internal/asm	0.051s
+?   	cmd/asm/internal/flags	[no test files]
+PASS
+ok  	cmd/asm/internal/lex	0.025s
+?   	cmd/cgo	[no test files]
+?   	cmd/compile	[no test files]
+?   	cmd/compile/internal/amd64	[no test files]
+?   	cmd/compile/internal/arm	[no test files]
+?   	cmd/compile/internal/arm64	[no test files]

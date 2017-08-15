@@ -776,4 +776,221 @@ BenchmarkReplaceAll	  500000	      4032 ns/op
 BenchmarkAnchoredLiteralShortNonMatch	20000000	       116 ns/op
 BenchmarkAnchoredLiteralLongNonMatch	20000000	       113 ns/op
 BenchmarkAnchoredShortMatch	10000000	       291 ns/op
-BenchmarkAnchoredLongMatch	
+BenchmarkAnchoredLongMatch	10000000	       292 ns/op
+BenchmarkOnePassShortA	 5000000	       661 ns/op
+BenchmarkNotOnePassShortA	 1000000	      1844 ns/op
+BenchmarkOnePassShortB	 5000000	       512 ns/op
+BenchmarkNotOnePassShortB	 1000000	      1594 ns/op
+BenchmarkOnePassLongPrefix	20000000	       121 ns/op
+BenchmarkOnePassLongNotPrefix	 5000000	       421 ns/op
+BenchmarkMatchEasy0_32	20000000	       101 ns/op	 316.66 MB/s
+BenchmarkMatchEasy0_1K	 5000000	       559 ns/op	1829.75 MB/s
+BenchmarkMatchEasy0_32K	  200000	     11569 ns/op	2832.39 MB/s
+BenchmarkMatchEasy0_1M	    5000	    402829 ns/op	2603.03 MB/s
+BenchmarkMatchEasy0_32M	     100	  13044866 ns/op	2572.23 MB/s
+BenchmarkMatchEasy1_32	20000000	        84.7 ns/op	 377.74 MB/s
+BenchmarkMatchEasy1_1K	 1000000	      2160 ns/op	 473.89 MB/s
+BenchmarkMatchEasy1_32K	   50000	     51907 ns/op	 631.27 MB/s
+BenchmarkMatchEasy1_1M	    1000	   1865632 ns/op	 562.05 MB/s
+BenchmarkMatchEasy1_32M	      50	  58061652 ns/op	 577.91 MB/s
+BenchmarkMatchMedium_32	 1000000	      1400 ns/op	  22.85 MB/s
+BenchmarkMatchMedium_1K	   50000	     55132 ns/op	  18.57 MB/s
+BenchmarkMatchMedium_32K	    1000	   1721465 ns/op	  19.03 MB/s
+BenchmarkMatchMedium_1M	      50	  55217846 ns/op	  18.99 MB/s
+BenchmarkMatchMedium_32M	       1	1860226836 ns/op	  18.04 MB/s
+BenchmarkMatchHard_32	 1000000	      2610 ns/op	  12.26 MB/s
+BenchmarkMatchHard_1K	   20000	     81959 ns/op	  12.49 MB/s
+BenchmarkMatchHard_32K	    1000	   2658710 ns/op	  12.32 MB/s
+BenchmarkMatchHard_1M	      20	  87431840 ns/op	  11.99 MB/s
+BenchmarkMatchHard_32M	       1	2724690490 ns/op	  12.31 MB/s
+ok  	regexp	104.181s
+PASS
+BenchmarkEmptyOpContext	 5000000	       321 ns/op
+ok  	regexp/syntax	2.361s
+--- FAIL: TestCgoCrashHandler (0.18 seconds)
+	crash_test.go:85: output:
+		# command-line-arguments
+		/usr/bin/ld: -r and -pie may not be used together
+		collect2: error: ld returned 1 exit status
+		
+		
+		wanted:
+		main: recovered done
+		new-thread: recovered done
+		second-new-thread: recovered done
+		main-again: recovered done
+--- FAIL: TestCgoSignalDeadlock (0.13 seconds)
+	crash_cgo_test.go:25: expected "OK\n", but got "# command-line-arguments\n/usr/bin/ld: -r and -pie may not be used together\ncollect2: error: ld returned 1 exit status\n"
+--- FAIL: TestCgoTraceback (0.14 seconds)
+	crash_cgo_test.go:33: expected "OK\n", but got "# command-line-arguments\n/usr/bin/ld: -r and -pie may not be used together\ncollect2: error: ld returned 1 exit status\n"
+FAIL
+exit status 1
+FAIL	runtime	116.364s
+?   	runtime/cgo	[no test files]
+PASS
+ok  	runtime/debug	0.030s
+PASS
+ok  	runtime/pprof	8.488s
+?   	runtime/race	[no test files]
+PASS
+BenchmarkSearchWrappers	20000000	       143 ns/op
+BenchmarkSortString1K	   10000	    241040 ns/op
+BenchmarkStableString1K	   10000	    262017 ns/op
+BenchmarkSortInt1K	   20000	     94737 ns/op
+BenchmarkStableInt1K	   20000	     97219 ns/op
+BenchmarkSortInt64K	     200	   8953475 ns/op
+BenchmarkStableInt64K	     200	   8246299 ns/op
+BenchmarkSort1e2	   50000	     48235 ns/op
+BenchmarkStable1e2	   10000	    112128 ns/op
+BenchmarkSort1e4	     100	  10745035 ns/op
+BenchmarkStable1e4	      50	  37195584 ns/op
+BenchmarkSort1e6	       1	1684161034 ns/op
+BenchmarkStable1e6	       1	7761829782 ns/op
+ok  	sort	39.435s
+PASS
+BenchmarkAtof64Decimal	100000000	        27.8 ns/op
+BenchmarkAtof64Float	50000000	        34.5 ns/op
+BenchmarkAtof64FloatExp	20000000	        80.5 ns/op
+BenchmarkAtof64Big	20000000	       116 ns/op
+BenchmarkAtof64RandomBits	10000000	       228 ns/op
+BenchmarkAtof64RandomFloats	20000000	       131 ns/op
+BenchmarkAtof32Decimal	100000000	        28.2 ns/op
+BenchmarkAtof32Float	50000000	        32.3 ns/op
+BenchmarkAtof32FloatExp	50000000	        73.6 ns/op
+BenchmarkAtof32Random	20000000	       109 ns/op
+BenchmarkAtoi	50000000	        32.9 ns/op
+BenchmarkAtoiNeg	50000000	        33.5 ns/op
+BenchmarkAtoi64	50000000	        44.4 ns/op
+BenchmarkAtoi64Neg	50000000	        45.3 ns/op
+BenchmarkFormatFloatDecimal	10000000	       171 ns/op
+BenchmarkFormatFloat	10000000	       259 ns/op
+BenchmarkFormatFloatExp	10000000	       240 ns/op
+BenchmarkFormatFloatNegExp	10000000	       244 ns/op
+BenchmarkFormatFloatBig	 5000000	       331 ns/op
+BenchmarkAppendFloatDecimal	50000000	        70.1 ns/op
+BenchmarkAppendFloat	10000000	       156 ns/op
+BenchmarkAppendFloatExp	20000000	       145 ns/op
+BenchmarkAppendFloatNegExp	20000000	       132 ns/op
+BenchmarkAppendFloatBig	10000000	       220 ns/op
+BenchmarkAppendFloat32Integer	50000000	        72.6 ns/op
+BenchmarkAppendFloat32ExactFraction	20000000	       127 ns/op
+BenchmarkAppendFloat32Point	10000000	       159 ns/op
+BenchmarkAppendFloat32Exp	20000000	       130 ns/op
+BenchmarkAppendFloat32NegExp	20000000	       131 ns/op
+BenchmarkAppendFloat64Fixed1	20000000	       102 ns/op
+BenchmarkAppendFloat64Fixed2	20000000	       107 ns/op
+BenchmarkAppendFloat64Fixed3	20000000	       104 ns/op
+BenchmarkAppendFloat64Fixed4	20000000	       110 ns/op
+BenchmarkFormatInt	 1000000	      2151 ns/op
+BenchmarkAppendInt	 1000000	      1363 ns/op
+BenchmarkFormatUint	 5000000	       548 ns/op
+BenchmarkAppendUint	 5000000	       415 ns/op
+BenchmarkUnquoteEasy	20000000	       146 ns/op
+BenchmarkUnquoteHard	 2000000	       890 ns/op
+ok  	strconv	97.511s
+PASS
+BenchmarkGenericNoMatch	 1000000	      1559 ns/op
+BenchmarkGenericMatch1	  500000	      5181 ns/op
+BenchmarkGenericMatch2	  100000	     27179 ns/op
+BenchmarkSingleMaxSkipping	 1000000	      1071 ns/op	9336.07 MB/s
+BenchmarkSingleLongSuffixFail	 2000000	       967 ns/op	1035.43 MB/s
+BenchmarkSingleMatch	   50000	     37458 ns/op	 400.44 MB/s
+BenchmarkByteByteNoMatch	 5000000	       376 ns/op
+BenchmarkByteByteMatch	 5000000	       681 ns/op
+BenchmarkByteStringMatch	 1000000	      1047 ns/op
+BenchmarkHTMLEscapeNew	 5000000	       307 ns/op
+BenchmarkHTMLEscapeOld	 5000000	       444 ns/op
+BenchmarkByteByteReplaces	  500000	      6417 ns/op
+BenchmarkByteByteMap	 1000000	      1964 ns/op
+BenchmarkIndexRune	50000000	        55.7 ns/op
+BenchmarkIndexRuneFastPath	100000000	        16.7 ns/op
+BenchmarkIndex	100000000	        26.7 ns/op
+BenchmarkIndexByte	100000000	        21.5 ns/op
+BenchmarkMapNoChanges	10000000	       201 ns/op
+BenchmarkIndexHard1	    1000	   1536590 ns/op
+BenchmarkIndexHard2	    1000	   1532454 ns/op
+BenchmarkIndexHard3	    1000	   1531175 ns/op
+BenchmarkCountHard1	    1000	   1528623 ns/op
+BenchmarkCountHard2	    1000	   1549208 ns/op
+BenchmarkCountHard3	    1000	   1542672 ns/op
+BenchmarkIndexTorture	  200000	     10973 ns/op
+BenchmarkCountTorture	  200000	     10974 ns/op
+BenchmarkCountTortureOverlapping	     500	   5665601 ns/op
+BenchmarkFields	     100	  18341886 ns/op	  57.17 MB/s
+BenchmarkFieldsFunc	     100	  18252214 ns/op	  57.45 MB/s
+BenchmarkSplit1	     100	  19774486 ns/op
+BenchmarkSplit2	     500	   3506474 ns/op
+BenchmarkSplit3	     500	   3124595 ns/op
+ok  	strings	70.591s
+PASS
+BenchmarkCond1	10000000	       161 ns/op
+BenchmarkCond2	10000000	       263 ns/op
+BenchmarkCond4	 5000000	       480 ns/op
+BenchmarkCond8	 2000000	       917 ns/op
+BenchmarkCond16	 1000000	      1789 ns/op
+BenchmarkCond32	  500000	      3558 ns/op
+BenchmarkUncontendedSemaphore	100000000	        22.0 ns/op
+BenchmarkContendedSemaphore	20000000	        98.4 ns/op
+BenchmarkMutexUncontended	100000000	        17.1 ns/op
+BenchmarkMutex	100000000	        17.1 ns/op
+BenchmarkMutexSlack	100000000	        29.1 ns/op
+BenchmarkMutexWork	20000000	       116 ns/op
+BenchmarkMutexWorkSlack	20000000	       118 ns/op
+BenchmarkOnce	500000000	         6.35 ns/op
+BenchmarkPool	100000000	        20.8 ns/op
+BenchmarkPoolOverlflow	  500000	      5388 ns/op
+BenchmarkSemaUncontended	100000000	        23.5 ns/op
+BenchmarkSemaSyntNonblock	100000000	        23.9 ns/op
+BenchmarkSemaSyntBlock	100000000	        23.9 ns/op
+BenchmarkSemaWorkNonblock	20000000	       129 ns/op
+BenchmarkSemaWorkBlock	20000000	       129 ns/op
+BenchmarkRWMutexUncontended	50000000	        66.5 ns/op
+BenchmarkRWMutexWrite100	100000000	        23.3 ns/op
+BenchmarkRWMutexWrite10	100000000	        24.8 ns/op
+BenchmarkRWMutexWorkWrite100	20000000	       130 ns/op
+BenchmarkRWMutexWorkWrite10	20000000	       113 ns/op
+BenchmarkWaitGroupUncontended	100000000	        22.5 ns/op
+BenchmarkWaitGroupAddDone	100000000	        21.3 ns/op
+BenchmarkWaitGroupAddDoneWork	20000000	       120 ns/op
+BenchmarkWaitGroupWait	500000000	         4.90 ns/op
+BenchmarkWaitGroupWaitWork	20000000	       107 ns/op
+ok  	sync	76.875s
+PASS
+ok  	sync/atomic	1.667s
+PASS
+ok  	syscall	0.019s
+PASS
+ok  	testing	4.298s
+?   	testing/iotest	[no test files]
+PASS
+ok  	testing/quick	0.031s
+PASS
+ok  	text/scanner	0.030s
+PASS
+ok  	text/tabwriter	0.024s
+PASS
+ok  	text/template	0.037s
+PASS
+ok  	text/template/parse	0.018s
+--- FAIL: TestParseInLocation (0.00 seconds)
+	format_test.go:202: ParseInLocation(Feb 01 2013 AST, Baghdad) = 2013-02-01 00:00:00 +0000 AST, want 2013-02-01 00:00:00 +0300 +03
+--- FAIL: TestOverflowRuntimeTimer (0.10 seconds)
+	sleep_test.go:391: runtime timer stuck: overflow in addtimer
+--- FAIL: TestLoadFixed (0.00 seconds)
+	time_test.go:929: Now().In(loc).Zone() = "-01", -3600, want "GMT+1", -3600
+FAIL
+exit status 1
+FAIL	time	8.009s
+PASS
+ok  	unicode	0.033s
+PASS
+ok  	unicode/utf16	0.027s
+PASS
+BenchmarkRuneCountTenASCIIChars	50000000	        38.3 ns/op
+BenchmarkRuneCountTenJapaneseChars	20000000	        90.1 ns/op
+BenchmarkEncodeASCIIRune	1000000000	         2.40 ns/op
+BenchmarkEncodeJapaneseRune	500000000	         4.76 ns/op
+BenchmarkDecodeASCIIRune	500000000	         4.23 ns/op
+BenchmarkDecodeJapaneseRune	500000000	         7.40 ns/op
+ok  	unicode/utf8	16.415s
+?   	unsafe	[no test files]
