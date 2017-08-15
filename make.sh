@@ -9,7 +9,7 @@ run(){
 	suite=$1
 
 	echo "Running ${REPO_URL}/${base}:${suite} benchmark"
-	docker run --rm -i ${REPO_URL}/${base}:${suite}  &> "${suite}/benchmark.log" || return 1
+	docker run --rm -i ${REPO_URL}/${base}:${suite}  &> "${suite}/benchmark.log"
 
 	# clean the logs
 	cat "${suite}/benchmark.log" | grep "^Benchmark" | sed s/-12//g > "${suite}/clean.log"
@@ -40,7 +40,6 @@ main(){
 	files=( $(find . -iname '*Dockerfile' | sed 's|./||' | sort) )
 	unset IFS
 
-	ERRORS=()
 	# build all dockerfiles
 	for f in "${files[@]}"; do
 		image=${f%Dockerfile}
@@ -48,31 +47,13 @@ main(){
 		build_dir=$(dirname $f)
 
 		if [[ "$arg" == "build" ]]; then
-			{
-				build "${suite}" "${build_dir}"
-			} || {
-			# add to errors
-			errors+=("${suite}")
-			}
+			build "${suite}" "${build_dir}"
 		else
-			{
-				run "${suite}"
-			} || {
-			# add to errors
-			errors+=("${suite}")
-			}
+			run "${suite}"
 		fi
-	echo
-	echo
-done
-
-if [ ${#ERRORS[@]} -eq 0 ]; then
-	echo "No errors, hooray!"
-else
-	echo "[ERROR] Some images did not build correctly, see below." >&2
-	echo "These images failed: ${ERRORS[@]}" >&2
-	exit 1
-fi
+		echo
+		echo
+	done
 }
 
 main $@
