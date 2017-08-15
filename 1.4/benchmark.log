@@ -513,4 +513,36 @@ ok  	go/doc	0.087s
 PASS
 ok  	go/format	0.031s
 PASS
-BenchmarkParse	
+BenchmarkParse	     300	   4144647 ns/op	  15.01 MB/s
+ok  	go/parser	1.801s
+PASS
+BenchmarkPrint	     200	   8048043 ns/op
+ok  	go/printer	2.632s
+PASS
+BenchmarkScan	   50000	     29951 ns/op
+BenchmarkScanFile	    5000	    327072 ns/op	  53.76 MB/s
+ok  	go/scanner	3.563s
+PASS
+ok  	go/token	0.068s
+?   	hash	[no test files]
+PASS
+BenchmarkAdler32KB	 2000000	       580 ns/op	1764.98 MB/s
+ok  	hash/adler32	1.883s
+PASS
+BenchmarkCrc32KB	  500000	      2444 ns/op	 418.92 MB/s
+ok  	hash/crc32	1.259s
+PASS
+BenchmarkCrc64KB	  500000	      2395 ns/op	 427.49 MB/s
+ok  	hash/crc64	2.104s
+PASS
+BenchmarkFnv32KB	 1000000	      1105 ns/op	 926.26 MB/s
+BenchmarkFnv32aKB	 1000000	      1084 ns/op	 944.41 MB/s
+BenchmarkFnv64KB	 1000000	      1091 ns/op	 937.86 MB/s
+BenchmarkFnv64aKB	 1000000	      1091 ns/op	 938.26 MB/s
+ok  	hash/fnv	5.105s
+PASS
+ok  	html	0.023s
+PASS
+BenchmarkCSSEscaper	  500000	      2334 ns/op
+BenchmarkCSSEscaperNoSpecials	 3000000	       483 ns/op
+BenchmarkDecodeCSS	

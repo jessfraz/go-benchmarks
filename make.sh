@@ -15,7 +15,7 @@ run(){
 	cat "${suite}/benchmark.log" | grep "^Benchmark" | sed s/-12//g > "${suite}/clean.log"
 
 	echo "                       ---                                   "
-	echo "Successfully ran ${base}:${suite} log lives in ${suite}/benchmark.log"
+	echo "Successfully ran ${base}:${suite} log lives in ${suite}/{benchmark,clean}.log"
 	echo "                       ---                                   "
 }
 
@@ -49,7 +49,7 @@ main(){
 		if [[ "$arg" == "build" ]]; then
 			build "${suite}" "${build_dir}"
 		else
-			run "${suite}"
+			run "${suite}" || true
 		fi
 		echo
 		echo
