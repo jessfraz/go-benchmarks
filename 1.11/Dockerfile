@@ -13,14 +13,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		wget \
 	&& rm -rf /var/lib/apt/lists/*
 
-ENV GOLANG_VERSION 1.9.7
+ENV GOLANG_VERSION 1.11.2
 
 RUN set -eux; \
 	\
 # this "case" statement is generated via "update.sh"
 	dpkgArch="$(dpkg --print-architecture)"; \
 	case "${dpkgArch##*-}" in \
-		amd64) goRelArch='linux-amd64'; goRelSha256='88573008f4f6233b81f81d8ccf92234b4f67238df0f0ab173d75a302a1f3d6ee' ;; \
+		amd64) goRelArch='linux-amd64'; goRelSha256='1dfe664fa3d8ad714bbd15a36627992effd150ddabd7523931f077b3926d736d' ;; \
 		*) echo >&2; echo >&2 "warning: current architecture ($dpkgArch) does not have a corresponding Go binary release; will be building from source"; echo >&2; exit 1 ;; \
 	esac; \
 	\
